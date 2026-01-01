@@ -38,3 +38,37 @@ passlib[bcrypt]==1.7.4
 pytest==7.4.3
 httpx==0.26.0
 
+# ===== Phase 2: Backend API (Optional for now) =====
+# Uncomment when building the API
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.5.0
+python-multipart==0.0.6
+
+# ===== Phase 2: Task Queue (Optional for now) =====
+# Uncomment when adding background jobs
+celery==5.3.4
+redis==5.0.1
+
+# ===== Phase 2: Database (Optional for now) =====
+# Uncomment when adding persistent storage
+sqlalchemy==2.0.25
+psycopg2-binary==2.9.9     # PostgreSQL
+alembic==1.13.1            # Database migrations
+
+# ===== Email Integration (Optional) =====
+sendgrid==6.11.0           # Email delivery
+python-decouple==3.8       # Environment variables
+
+# ===== AI Features - Phase 2 (Optional) =====
+anthropic==0.8.1           # Claude API for alt-text generation
+
+# ===== Utilities =====
+python-dotenv==1.0.0        # Environment variable management
+requests==2.31.0            # HTTP library
+
+# ===== Development Tools (Optional) =====
+pytest==7.4.3              # Testing
+black==23.12.1             # Code formatting
+flake8==7.0.0              # Linting
+ipython==8.19.0            # Better REPL

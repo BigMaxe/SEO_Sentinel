@@ -1,0 +1,24 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+  
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: seo_sentinel
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+  
+  redis:
+    image: redis:7-alpine
+  
+  celery:
+    build: .
+    command: celery -A app.tasks.celery_app worker
+    depends_on:
+      - redis
